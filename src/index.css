@@ -1,0 +1,204 @@
+:root {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  color: #0a2d2f;
+  background-color: #e9f8f8;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #e8f8fb, #c9f0f5);
+  color: #083a45;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background: #0bbbc1;
+  color: #fff;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nav-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #00c6cf, #00a5b5);
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 191, 199, 0.3);
+}
+
+.secondary-btn {
+  background: #fff;
+  color: #0a2d2f;
+  border: 1px solid #b9f0f3;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  margin-bottom: 16px;
+}
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 900px) {
+  .two-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #bfecee;
+  background: #f3fbfc;
+  margin-bottom: 12px;
+  font-size: 14px;
+}
+
+.label {
+  font-weight: 700;
+  margin-bottom: 4px;
+  display: block;
+}
+
+.badge {
+  display: inline-block;
+  background: #dcf8f9;
+  color: #0a656d;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  margin-left: 8px;
+}
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+}
+
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 420px;
+  width: 90%;
+}
+
+.banner {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: #e6f9fc;
+  color: #07404a;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.status-text {
+  font-weight: 700;
+  color: #085f65;
+}
+
+.sos-button {
+  width: 180px;
+  height: 180px;
+  border-radius: 999px;
+  background: #ff3b30;
+  color: #fff;
+  font-size: 28px;
+  border: 6px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 40px rgba(255, 59, 48, 0.3);
+}
+
+.gold-theme {
+  background: #050505;
+  color: #f2d27c;
+}
+
+.gold-card {
+  background: linear-gradient(135deg, rgba(242, 210, 124, 0.1), rgba(242, 210, 124, 0.2));
+  border: 1px solid rgba(242, 210, 124, 0.5);
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table td, .table th {
+  border: 1px solid #c7ecee;
+  padding: 8px;
+}
+
+.table th {
+  background: #eaf8f9;
+}
+
+.log-list {
+  max-height: 220px;
+  overflow: auto;
+  background: #f6fcfc;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.safe-path {
+  display: grid;
+  gap: 12px;
+}
