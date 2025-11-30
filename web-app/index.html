@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Royal Shield | Centro de mando web</title>
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="hero">
+      <div class="hero__meta">
+        <div class="brand">⨳ Royal Shield</div>
+        <p class="tagline">Seguridad personal y digital ahora en versión web.</p>
+      </div>
+      <nav class="nav">
+        <a href="#dashboard">Panel</a>
+        <a href="#elite">Elite</a>
+        <a href="#registro">Registro</a>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section id="dashboard" class="section">
+        <div class="section__header">
+          <h1>Panel táctico</h1>
+          <p>
+            Replica las funciones principales de la app: activa la alarma perimetral, solicita acompañamiento y ejecuta los
+            protocolos de seguridad digital desde tu navegador.
+          </p>
+        </div>
+
+        <div class="grid status">
+          <article class="card status__card">
+            <div class="status__label">Perímetro</div>
+            <div class="status__value" id="status-alarm">Listo para activar</div>
+            <p class="status__hint">Activa la alarma para proteger todo el perímetro.</p>
+          </article>
+          <article class="card status__card">
+            <div class="status__label">Cámaras</div>
+            <div class="status__value" id="status-cameras">Monitoreo en vivo</div>
+            <p class="status__hint">Controla el streaming seguro desde aquí.</p>
+          </article>
+          <article class="card status__card">
+            <div class="status__label">Última acción</div>
+            <div class="status__value" id="status-last">Sin eventos recientes</div>
+            <p class="status__hint">Todas las acciones quedan registradas.</p>
+          </article>
+        </div>
+
+        <div class="grid actions">
+          <article class="card action">
+            <div>
+              <h3>Alarma perimetral</h3>
+              <p>Arma y desarma el sistema central.</p>
+            </div>
+            <button class="chip" data-toggle="alarm">Activar alarma</button>
+          </article>
+          <article class="card action">
+            <div>
+              <h3>Modo nocturno</h3>
+              <p>Iluminación tenue y sensores refinados.</p>
+            </div>
+            <button class="chip" data-toggle="night">Activar modo nocturno</button>
+          </article>
+          <article class="card action">
+            <div>
+              <h3>Cámaras</h3>
+              <p>Supervisa el estado de streaming.</p>
+            </div>
+            <button class="chip" data-toggle="cameras">Reactivar cámaras</button>
+          </article>
+          <article class="card action">
+            <div>
+              <h3>Acompañamiento</h3>
+              <p>Solicita apoyo preventivo para tus trayectos.</p>
+            </div>
+            <button class="chip" data-action="escort">Programar acompañamiento</button>
+          </article>
+        </div>
+
+        <div class="grid emergency">
+          <article class="card emergency__card">
+            <div>
+              <h3>Botón de pánico</h3>
+              <p>Envía alerta, activa video y comparte ubicación en segundos.</p>
+            </div>
+            <div class="emergency__cta">
+              <button class="btn btn--primary" id="btn-emergency">Iniciar emergencia</button>
+              <button class="btn btn--ghost" id="btn-location">Compartir ubicación</button>
+            </div>
+            <div class="emergency__meta">
+              <span id="escort-count">0 acompañamientos</span>
+              <span id="location-state">Ubicación privada</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="grid advanced">
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">Escudo digital</p>
+              <h3>Bloqueo de URL</h3>
+              <p>Detiene enlaces maliciosos antes de abrirlos.</p>
+            </div>
+            <button class="chip" data-action="url">Bloquear URL</button>
+            <span class="metric" id="metric-url">0 bloqueos</span>
+          </article>
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">Privacidad</p>
+              <h3>Monitor de fugas</h3>
+              <p>Alertas de exposición de correo o datos sensibles.</p>
+            </div>
+            <button class="chip" data-toggle="breach">Activar monitor</button>
+            <span class="metric" id="metric-breach">Inactivo</span>
+          </article>
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">Amenazas</p>
+              <h3>Escáner de apps</h3>
+              <p>Analiza comportamiento sospechoso en segundo plano.</p>
+            </div>
+            <button class="chip" data-toggle="malware">Iniciar escaneo</button>
+            <span class="metric" id="metric-malware">En espera</span>
+          </article>
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">IA Forense</p>
+              <h3>Detección acústica</h3>
+              <p>Escucha gritos o ruidos fuertes para disparar ayuda.</p>
+            </div>
+            <button class="chip" data-toggle="sound">Armar escucha</button>
+            <span class="metric" id="metric-sound">Desarmado</span>
+          </article>
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">Autonomía</p>
+              <h3>Protocolo batería baja</h3>
+              <p>Envia ubicación cuando la carga cae por debajo de 15%.</p>
+            </div>
+            <button class="chip" data-toggle="battery">Activar protocolo</button>
+            <span class="metric" id="metric-battery">Inactivo</span>
+          </article>
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">Disuasión</p>
+              <h3>PIN señuelo</h3>
+              <p>Genera una alerta silenciosa si desbloquean con un PIN falso.</p>
+            </div>
+            <button class="chip" data-toggle="fakepin">Armar PIN falso</button>
+            <span class="metric" id="metric-fakepin">Desarmado</span>
+          </article>
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">Asistencia</p>
+              <h3>Asistente de voz</h3>
+              <p>Responde a comandos como “Ayuda” incluso con la pantalla bloqueada.</p>
+            </div>
+            <button class="chip" data-toggle="voice">Escuchar</button>
+            <span class="metric" id="metric-voice">En espera</span>
+          </article>
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">Evidencia</p>
+              <h3>Grabación automática</h3>
+              <p>Captura audio de respaldo al activar S.O.S.</p>
+            </div>
+            <button class="chip" data-toggle="recording">Armar grabación</button>
+            <span class="metric" id="metric-recording">Pausado</span>
+          </article>
+          <article class="card advanced__card">
+            <div>
+              <p class="eyebrow">Ruta segura</p>
+              <h3>Modo trayecto</h3>
+              <p>Supervisa desvíos y alerta a tu círculo seguro.</p>
+            </div>
+            <button class="chip" data-toggle="safepath">Vigilar ruta</button>
+            <span class="metric" id="metric-safepath">Sin monitoreo</span>
+          </article>
+        </div>
+
+        <div class="card log">
+          <div class="log__header">
+            <h3>Bitácora en vivo</h3>
+            <button class="chip" id="btn-clear-log">Limpiar</button>
+          </div>
+          <ul id="action-log" class="log__list" aria-live="polite"></ul>
+        </div>
+      </section>
+
+      <section id="elite" class="section">
+        <div class="section__header">
+          <h2>Elite dorado</h2>
+          <p>Suscripciones premium inspiradas en la versión móvil con estética dorada y negro.</p>
+        </div>
+        <div class="grid tiers">
+          <article class="card tier">
+            <p class="eyebrow">Exclusivo</p>
+            <h3>Elite Black</h3>
+            <p class="tier__price">USD 29.99 / mes</p>
+            <ul>
+              <li>Inteligencia predictiva 24/7</li>
+              <li>Canal directo con analistas Royal Shield</li>
+              <li>Autodesbloqueo biométrico redundante</li>
+            </ul>
+            <button class="btn btn--primary">Activar prueba VIP</button>
+          </article>
+          <article class="card tier">
+            <p class="eyebrow">Popular</p>
+            <h3>Signature Gold</h3>
+            <p class="tier__price">USD 14.99 / mes</p>
+            <ul>
+              <li>Escaneo avanzado de enlaces y malware</li>
+              <li>Rutas seguras ilimitadas</li>
+              <li>Backup cifrado en nube soberana</li>
+            </ul>
+            <button class="btn btn--ghost">Probar ahora</button>
+          </article>
+        </div>
+      </section>
+
+      <section id="registro" class="section">
+        <div class="section__header">
+          <h2>Registro en línea</h2>
+          <p>Crea tu acceso web y conéctalo con las alertas de la app móvil.</p>
+        </div>
+        <form class="card form" id="signup-form">
+          <div class="field">
+            <label for="name">Nombre completo</label>
+            <input id="name" name="name" type="text" placeholder="Ej. Ada Lovelace" required />
+          </div>
+          <div class="field">
+            <label for="email">Correo</label>
+            <input id="email" name="email" type="email" placeholder="tu@email.com" required />
+          </div>
+          <div class="field">
+            <label for="country">País</label>
+            <input id="country" name="country" type="text" placeholder="Ej. México" required />
+          </div>
+          <div class="field">
+            <label for="password">Contraseña</label>
+            <input id="password" name="password" type="password" required />
+          </div>
+          <div class="form__footer">
+            <button class="btn btn--primary" type="submit">Crear cuenta</button>
+            <p id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Royal Shield Web · Control centralizado y estética dorada.</p>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>
