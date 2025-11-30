@@ -1,0 +1,13 @@
+{
+  "name": "final-code",
+  "version": "1.0.0",
+  "description": "Royal Shield ahora incluye una versión web ligera para probar las funciones clave del panel de seguridad sin necesidad de compilar la app Android.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs"
+}
